@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get '/:notepad_url' => 'notepads#show', as: :notepad
+  post '/notepad' => 'notepads#create'
 
   root 'notepads#index'
 

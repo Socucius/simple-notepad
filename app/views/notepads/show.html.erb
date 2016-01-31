@@ -1,1 +1,5 @@
 <h1>Notepad <%= @notepad.url %> </h1>
+
+<%= form_for @notepad do |f| %>
+  <%= f.text_area :body %>
+<% end  %>
