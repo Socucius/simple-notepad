@@ -1,6 +1,7 @@
 <h1>Notepad <%= @notepad.url %> </h1>
 
 <%= form_for @notepad, url: notepad_path(@notepad) do |f| %>
-  <%= f.text_area :body %>
+  <%= f.text_area :body, id: "text-area" %>
+  <br>
   <%= f.submit %>
 <% end  %>

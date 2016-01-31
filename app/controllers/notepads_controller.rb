@@ -14,6 +14,7 @@ class NotepadsController < ApplicationController
     @notepad.update_attribute(:body, params[:notepad][:body])
     respond_to do |format|
       format.html { redirect_to pad_path(notepad_url: @notepad.url) }
+      format.js { }
     end
   end
 
