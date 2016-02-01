@@ -1,4 +1,6 @@
 <%= render partial: "nav" %>
 <div id="shared-content">
-  <%= simple_format( h @notepad.body) %>
+  <pre>
+    <%= @notepad.body %>
+  </pre>
 </div>
