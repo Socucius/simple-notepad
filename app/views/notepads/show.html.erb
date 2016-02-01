@@ -4,8 +4,4 @@
   </p>
 </div>
 
-<%= form_for @notepad, url: notepad_path(@notepad) do |f| %>
-  <%= f.text_area :body, id: "text-area" %>
-  <br>
-  <%= f.submit %>
-<% end  %>
+<%= text_area_tag :body, @notepad.body, id: "text-area" %>
