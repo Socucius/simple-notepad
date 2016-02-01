@@ -10,11 +10,11 @@ class NotepadsController < ApplicationController
   end
 
   def update
-    @notepad = Notepad.find(params[:id])
-    @notepad.update_attribute(:body, params[:notepad][:body])
+    @notepad = Notepad.find_by(url: params[:id])
+    @notepad.update_attribute(:body, params[:data])
     respond_to do |format|
       format.html { redirect_to pad_path(notepad_url: @notepad.url) }
-      format.js { }
+      format.js   { render nothing: true }
     end
   end
 
