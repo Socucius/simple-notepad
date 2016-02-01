@@ -1,4 +1,8 @@
-<h1>Notepad <%= @notepad.url %> </h1>
+<div class="nav">
+  <p>
+    <%= @notepad.url %>
+  </p>
+</div>
 
 <%= form_for @notepad, url: notepad_path(@notepad) do |f| %>
   <%= f.text_area :body, id: "text-area" %>
