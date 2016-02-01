@@ -1,7 +1,11 @@
 <div class="nav">
   <p>
-    <span id = "notepad-url"><%= @notepad.url %></span>
-    <span><a href="#" data-toggle="popover" data-placement="bottom" data-content="<%= share_url(@notepad)%>">share</a></span>
+    <% if params[:action] != "share"%>
+      <span id = "notepad-url"><%= @notepad.url %></span>
+      <span><a href="#" data-toggle="popover" data-placement="bottom" data-content="<%= share_url(@notepad)%>">share</a></span>
+    <% else %>
+      <span id = "notepad-url">shared doc</span>
+    <% end %>
   </p>
 </div>
 
