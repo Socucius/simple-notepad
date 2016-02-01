@@ -9,6 +9,10 @@ class NotepadsController < ApplicationController
     @notepad = CreateNotepadService.new(params[:notepad_url]).call
   end
 
+  def share
+    @notepad = Notepad.find(params[:notepad_share_url])
+  end
+
   def update
     @notepad = Notepad.find_by(url: params[:id])
     @notepad.update_attribute(:body, params[:data])
