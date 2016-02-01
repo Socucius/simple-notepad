@@ -10,7 +10,7 @@ class NotepadsController < ApplicationController
   end
 
   def share
-    @notepad = Notepad.find(params[:notepad_share_url])
+    @notepad = Notepad.find_by(share_url: params[:notepad_share_url])
   end
 
   def update

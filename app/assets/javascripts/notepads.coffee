@@ -5,7 +5,7 @@
 jQuery ->
 
   form        = $("#text-area")
-  notepad_url = $(".nav p").text().trim()
+  notepad_url = $("#notepad-url").text().trim()
   data        = $("#text-area").val()
   timer       = false
   console.log "Your notepad's adress is #{notepad_url}"

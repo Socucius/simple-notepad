@@ -1,0 +1,12 @@
+<div class="nav">
+  <p>
+    <span id = "notepad-url"><%= @notepad.url %></span>
+    <span><a href="#" data-toggle="popover" data-placement="bottom" data-content="<%= share_url(@notepad)%>">share</a></span>
+  </p>
+</div>
+
+<script>
+  $(document).ready(function(){
+      $('[data-toggle="popover"]').popover();
+  });
+</script>

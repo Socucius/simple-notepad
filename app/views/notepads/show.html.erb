@@ -1,7 +1,2 @@
-<div class="nav">
-  <p>
-    <%= @notepad.url %>
-  </p>
-</div>
-
+<%= render partial: "nav" %>
 <%= text_area_tag :body, @notepad.body, id: "text-area" %>
