@@ -6,6 +6,7 @@ class Notepad < ActiveRecord::Base
 
   def add_share_url
     share_url = (0..5).map { (('A'..'Z').to_a + ('a'..'z').to_a)[rand(50)]}.join
+    self.body = 'You are awesome!'
     self.share_url = share_url
   end
 end
