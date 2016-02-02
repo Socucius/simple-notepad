@@ -1,2 +1,2 @@
 <%= render partial: "nav" %>
-<%= text_area_tag :body, @notepad.body, id: "text-area" %>
+<div id="pad"><%= @notepad.body.html_safe %></div>

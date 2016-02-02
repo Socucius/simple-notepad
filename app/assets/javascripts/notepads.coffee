@@ -4,28 +4,43 @@
 
 jQuery ->
 
-  form        = $("#text-area")
-  notepad_url = $("#notepad-url").text().trim()
-  data        = $("#text-area").val()
-  timer       = false
-  console.log "Your notepad's adress is #{notepad_url}"
+  ready = ->
 
-  update_data = ->
-    data = $("#text-area").val()
-    NProgress.start()
-    $.ajax {
-      type: "PATCH",
-      url: "/notepads/#{notepad_url}",
-      data: {data: data},
-      dataType: "script",
-      success: ->
-        NProgress.done()
-    }
+    timer = false
 
-  form.on "keyup", ->
-    clearTimeout timer
-    console.log "Up"
-    timer = setTimeout (-> update_data() ), 1000
+    $('#pad').summernote({
+      toolbar: [
+        ['style', ['bold', 'italic', 'underline', 'clear']],
+        ['font', ['strikethrough', 'superscript', 'subscript']],
+        ['fontsize', ['fontsize']],
+        ['color', ['color']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['height', ['height']]
+      ],
+      callbacks: {
+        onKeyup: (e) ->
+          clearTimeout timer
+          data = $('.note-editable.panel-body').html()
+          timer = setTimeout (-> update_data(data) ), 1000
+        onKeydown: (e) ->
+          clearTimeout timer
+      }
+    })
 
-  form.on "keydown", ->
-    clearTimeout timer
+    form        = $('.note-editable.panel-body')
+    notepad_url = $("#notepad-url").text().trim()
+    data        = form.text()
+    console.log "Your notepad's adress is #{notepad_url}"
+
+    update_data = (data) ->
+      NProgress.start()
+      $.ajax {
+        type: "PATCH",
+        url: "/notepads/#{notepad_url}",
+        data: {data: data},
+        dataType: "script",
+        success: ->
+          NProgress.done()
+      }
+
+  $(document).ready ready

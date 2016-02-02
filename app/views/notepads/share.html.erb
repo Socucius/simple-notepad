@@ -1,6 +1,6 @@
 <%= render partial: "nav" %>
 <div id="shared-content">
   <pre>
-    <%= @notepad.body %>
+    <%= @notepad.body.html_safe %>
   </pre>
 </div>
