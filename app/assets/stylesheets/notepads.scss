@@ -38,6 +38,32 @@ form {
     padding-left: 5px;
     font-size: 1.5em;
   }
+    /* unvisited link */
+  a:link {
+      background-color: #00695C;
+      padding: 4px;
+  }
+
+  /* visited link */
+  a:visited {
+      color: white;
+  }
+
+  /* mouse over link */
+  a:hover {
+      color: hotpink;
+  }
+
+  /* selected link */
+  a:active {
+      color: white;
+  }
+}
+
+#notepad-url {
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  background-color: #00BFA5;
+  padding: 4px;
 }
 
 .popover-content {
