@@ -1,1 +1,2 @@
-== http://my-pad.herokuapp.com/
+http://my-pad.herokuapp.com
+share page sample: http://my-pad.herokuapp.com/share/YauNQk
