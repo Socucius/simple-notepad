@@ -21,7 +21,4 @@ class NotepadsController < ApplicationController
       format.js   { render nothing: true }
     end
   end
-
-
-
 end
